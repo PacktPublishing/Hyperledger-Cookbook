@@ -1,0 +1,50 @@
+/**
+ * credit farmatrace queries
+ */
+query selectAllEvident {
+  description: "Select all Evidents"
+  statement:
+      SELECT org.packt.farmatrace.Evident
+}
+query selectDrugReceiptByReceiptId {
+  description: "select Drug Receipt By ReceiptId"
+  statement:
+      SELECT org.packt.farmatrace.DrugReceipt
+          WHERE (receiptId==_$receiptId)
+}
+query findManufacturerById {
+  description: "select Manufacturer By id"
+  statement:
+      SELECT org.packt.farmatrace.Manufacturer
+          WHERE (manufacturerId==_$manufacturerId)
+}
+query findDistributionById {
+  description: "select Distribution By id"
+  statement:
+      SELECT org.packt.farmatrace.Distribution
+          WHERE (distributionId==_$distributionId)
+}
+query findPharmacyById {
+  description: "select Pharmacy By id"
+  statement:
+      SELECT org.packt.farmatrace.Pharmacy
+          WHERE (pharmacyId==_$pharmacyId)
+}
+query findHospitalById {
+  description: "select Hospital By id"
+  statement:
+      SELECT org.packt.farmatrace.Hospital
+          WHERE (hospitalId==_$hospitalId)
+}
+query findPhysicianById {
+  description: "select Physician By id"
+  statement:
+      SELECT org.packt.farmatrace.Physician
+          WHERE (physicianId==_$physicianId)
+}
+query findCustomerById {
+  description: "select Customer By id"
+  statement:
+      SELECT org.packt.farmatrace.Customer
+          WHERE (customerId==_$customerId)
+}

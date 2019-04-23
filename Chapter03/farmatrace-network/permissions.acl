@@ -1,0 +1,72 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/**
+ * farmatrace access control list.
+ */
+rule EverybodyCanReadEverything {
+    description: "Allow all participants read access to all resources"
+    participant: "ANY"
+    operation: READ
+    resource: "org.packt.farmatrace.*"
+    action: ALLOW
+}
+
+rule ParticipantsSeeSelves {
+  	description: "Let participants see themselves"
+  	participant(p): "org.hyperledger.composer.system.Participant"
+  	operation: ALL
+    resource(r): "org.hyperledger.composer.system.Participant"
+  	condition: (r.getIdentifier() == p.getIdentifier())
+  	action: ALLOW
+}
+rule ManufacturerMakeApplication {
+	description: "Manufacturer can submit an InitialApplication transaction"
+  	participant: "org.packt.farmatrace.Manufacturer"
+  	operation: CREATE
+    resource: "org.packt.farmatrace.InitialApplication"
+  	action: ALLOW
+}
+rule  ManufacturerMakeDrug {
+	description: "Manufacturer can make Drug"
+  	participant(p): "org.packt.farmatrace.Manufacturer"
+  	operation: CREATE
+    resource(r): "org.packt.farmatrace.makeDrug"
+    condition: (p.getIdentifier() === r.manufacturer.getIdentifier())
+  	action: ALLOW
+}
+
+rule SystemACL {
+  description:  "System ACL to permit all access"
+  participant: "org.hyperledger.composer.system.Participant"
+  operation: ALL
+  resource: "org.hyperledger.composer.system.**"
+  action: ALLOW
+}
+
+rule NetworkAdminUser {
+    description: "Grant business network administrators full access to user resources"
+    participant: "org.hyperledger.composer.system.NetworkAdmin"
+    operation: ALL
+    resource: "**"
+    action: ALLOW
+}
+
+rule NetworkAdminSystem {
+    description: "Grant business network administrators full access to system resources"
+    participant: "org.hyperledger.composer.system.NetworkAdmin"
+    operation: ALL
+    resource: "org.hyperledger.composer.system.**"
+    action: ALLOW
+}

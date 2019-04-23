@@ -1,0 +1,6 @@
+jobs:
+
+- name: BasicContract
+  deploy:
+      contract: BasicContract.sol
+

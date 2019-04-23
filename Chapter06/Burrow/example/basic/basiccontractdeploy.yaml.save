@@ -1,0 +1,6 @@
+SimpleTest.soljobs:
+
+- name: simpleTestC
+  deploy:
+      contract: SimpleTest.sol
+

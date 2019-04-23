@@ -1,0 +1,81 @@
+[GenesisDoc]
+  GenesisTime = 2018-10-10T02:40:22Z
+  ChainName = "BurrowChain_016017"
+  [GenesisDoc.GlobalPermissions]
+    [GenesisDoc.GlobalPermissions.Base]
+      Perms = 2302
+      SetBit = 16383
+
+  [[GenesisDoc.Accounts]]
+    Address = "54EF1517D97E7A653D5FA5B05060A82A8856515D"
+    PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"FF4E4B9D3FB3B4CC0F113661E2E298C7DD7355A1207CA398496550BC162C04F3\"}"
+    Amount = 99999999999999
+    Name = "Full_0"
+    [GenesisDoc.Accounts.Permissions]
+      [GenesisDoc.Accounts.Permissions.Base]
+        Perms = 16383
+        SetBit = 16383
+
+  [[GenesisDoc.Accounts]]
+    Address = "0D3326F652934F86AA1B7CC7B6FFF1CDBCB41326"
+    PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"FAC5E27FB6718CAD44FA0D47D3B13214A11B35A29A3DD7551BFCAABA748BF389\"}"
+    Amount = 9999999999
+    Name = "Participant_0"
+    [GenesisDoc.Accounts.Permissions]
+      [GenesisDoc.Accounts.Permissions.Base]
+        Perms = 2118
+        SetBit = 2118
+
+  [[GenesisDoc.Validators]]
+    Address = "54EF1517D97E7A653D5FA5B05060A82A8856515D"
+    PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"FF4E4B9D3FB3B4CC0F113661E2E298C7DD7355A1207CA398496550BC162C04F3\"}"
+    Amount = 9999999999
+    Name = "Full_0"
+
+    [[GenesisDoc.Validators.UnbondTo]]
+      Address = "54EF1517D97E7A653D5FA5B05060A82A8856515D"
+      PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"FF4E4B9D3FB3B4CC0F113661E2E298C7DD7355A1207CA398496550BC162C04F3\"}"
+      Amount = 9999999999
+
+[Tendermint]
+  Seeds = ""
+  SeedMode = false
+  PersistentPeers = ""
+  ListenAddress = "tcp://0.0.0.0:26656"
+  ExternalAddress = ""
+  Moniker = ""
+  TendermintRoot = ".burrow"
+  AuthorizedPeers = ""
+
+[Execution]
+
+[Keys]
+  GRPCServiceEnabled = true
+  AllowBadFilePermissions = false
+  RemoteAddress = ""
+  KeysDirectory = ".keys"
+
+[RPC]
+  [RPC.Info]
+    Enabled = true
+    ListenAddress = "tcp://127.0.0.1:26658"
+  [RPC.Profiler]
+    Enabled = false
+    ListenAddress = "tcp://127.0.0.1:6060"
+  [RPC.GRPC]
+    Enabled = true
+    ListenAddress = "127.0.0.1:10997"
+  [RPC.Metrics]
+    Enabled = false
+    ListenAddress = "tcp://127.0.0.1:9102"
+    MetricsPath = "/metrics"
+    BlockSampleSize = 100
+
+[Logging]
+  ExcludeTrace = false
+  NonBlocking = false
+  [Logging.RootSink]
+    [Logging.RootSink.Output]
+      OutputType = "stderr"
+      Format = "json"
+

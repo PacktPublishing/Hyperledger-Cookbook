@@ -1,0 +1,17 @@
+{
+  "name": "assetmgr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "fabric-ca-client": "^1.4.0",
+    "fabric-network": "^1.4.0"
+  }
+}

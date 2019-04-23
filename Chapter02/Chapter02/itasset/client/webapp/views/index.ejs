@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Asset Managerment</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<script>
+      $(document).ready(function(){
+        $("#chainCodeQuery").click(function(){
+			$.get("http://52.15.203.98:3000/query", function(data){
+			var parsedJson = $.parseJSON($.parseJSON(data));
+			console.log(parsedJson);
+			  $("#assetType").val(parsedJson.assetType);
+			  $("#comment").val(parsedJson.comment);
+			   $("#deviceId").val(parsedJson.deviceId);
+			  $("#from").val(parsedJson.from);
+			  $("#to").val(parsedJson.to);
+			  $("#id").val(parsedJson.id);
+			  $("#status").val(parsedJson.status);
+			  $("#location").val(parsedJson.location);
+           });
+        });
+	   $("#ship").click(function(){
+          $.post("http://52.15.203.98:3000/ship", function(data){
+			var parsedJson = $.parseJSON($.parseJSON(data));
+			console.log(parsedJson);
+          });
+        });
+      });
+
+    </script>
+  </head>
+<body>
+	<div class="container" id="querySection">
+		<div class="row">
+		  <form role="form">
+		  	<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+				<label for="id">id</label>
+				<input type="text" class="form-control" id="id" placeholder="">
+			</div>
+			<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+				<label for="assetType">assetType</label>
+				<input type="text" class="form-control" id="assetType" placeholder="">
+			</div>
+			<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+				<label for="comment">comment</label>
+				<input type="text" class="form-control" id="comment" placeholder="">
+			</div>
+			<div class="clearfix"></div>
+			<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+				<label for="deviceId">deviceId</label>
+				<input type="text" class="form-control" id="deviceId" placeholder="">
+			</div>
+			<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+				<label for="from">from</label>
+				<input type="text" class="form-control" id="from" placeholder="">
+			</div>
+			<div class="clearfix"></div>
+			 <div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+				<label for="to">to</label>
+				<input type="text" class="form-control" id="to" placeholder="">
+			</div>
+			<div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+				<label for="status">status</label>
+				<input type="text" class="form-control" id="status" placeholder="">
+			</div>
+			<div class="clearfix"></div>
+			 <div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+				<label for="location">location</label>
+				<input type="text" class="form-control" id="location" placeholder="">
+			</div>
+		</form>
+		<div class="clearfix"></div>
+		<br /><br />
+		<div class="col-xs-10 col-sm-4 col-md-4 col-lg-4">
+				<button type="submit" id="chainCodeQuery" class="btn btn-success">Query Chaincode</button>
+				<button type="submit" id="ship" class="btn btn-success">Ship</button>
+			</div>
+		
+		</div>
+	</div>
+</body>
+</html>
+

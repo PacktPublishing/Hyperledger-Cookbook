@@ -1,0 +1,178 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/**
+ * farmatrace composer application 
+ * Hyperledger Cookbook
+ * Author: Brian Wu
+ */
+
+namespace org.packt.farmatrace
+
+//ENUMS
+
+enum ParticipantType {
+  o MANUAFACTURER
+  o DISTRIBUTION
+  o PHARMACY
+  o HOSPITAL
+  o PHYSICIAN
+  o CUSTOMER
+}
+//address
+concept Address {
+  o String street
+  o String city
+  o String country default = "US"
+}
+enum ReceiptStatus {
+  o START
+  o CREATE_DRUG
+  o PICK_UP_DRUG
+  o DEVLIER_PHARMACY
+  o DEVLIER_HOSPITAL
+  o DEVLIER_PHYSICIAN
+  o CUSTOMER_RECEIVED
+  o CLOSED
+}
+concept Entity {
+  o String name
+  o String desc
+  o String phone
+  o Address address
+}
+concept Person {
+  o String firstName
+  o String lastName
+  o String phone
+  o Address address
+}
+participant Manufacturer identified by manufacturerId {
+  o String manufacturerId
+  o Entity entityInfo
+}
+participant Distribution identified by distributionId {
+  o String distributionId
+  o Entity entityInfo
+}
+participant Pharmacy identified by pharmacyId {
+  o String pharmacyId
+  o Entity entityInfo
+}
+participant Hospital identified by hospitalId {
+  o String hospitalId
+  o Entity entityInfo
+}
+participant Physician identified by physicianId {
+  o String physicianId
+  o Person personInfo
+}
+participant Customer identified by customerId {
+  o String customerId
+  o Person personInfo
+}
+asset Evident identified by evidentId {
+  o String evidentId
+  o DateTime lastUpdate
+  o ParticipantType from
+  o ParticipantType to
+  o String fromId
+  o String toId
+  o ReceiptStatus status
+}
+asset Drug identified by drugId {
+  o String drugId
+  o String manu_date
+  o String expire_date
+  o String name
+  o String desc
+}
+asset DrugReceipt identified by receiptId {
+  o String receiptId
+  o ReceiptStatus currentStatus
+  --> Evident[] evidents
+  --> Drug drug
+  o String closeReason optional
+}
+// TRANSACTIONS + EVENTS
+transaction makeDrug {
+  o String fromId
+  o String toId
+  o DrugReceipt drugReceipt
+}
+event makeDrugEvent {
+  o DrugReceipt drugReceipt
+}
+transaction sendToDistribute {
+  o DrugReceipt drugReceipt
+  o String fromId
+  o String toId
+}
+event sendToDistributeEvent {
+  o DrugReceipt drugReceipt
+}
+transaction distributeToPharmacy {
+  o DrugReceipt drugReceipt
+  o String fromId
+  o String toId
+}
+transaction distributeToHospital {
+  o DrugReceipt drugReceipt
+  o String fromId
+  o String toId
+}
+transaction distributeToPhysician {
+  o DrugReceipt drugReceipt
+  o String fromId
+  o String toId
+}
+event distributeEvent {
+  o DrugReceipt drugReceipt
+}
+transaction buyFromPharmacy {
+  o DrugReceipt drugReceipt
+  o String fromId
+  o String toId
+}
+transaction buyFromHospital {
+  o DrugReceipt drugReceipt
+  o String fromId
+  o String toId
+}
+transaction buyFromPhysician {
+  o DrugReceipt drugReceipt
+  o String fromId
+  o String toId
+}
+event buyEvent {
+  o DrugReceipt drugReceipt
+} 
+transaction InitialApplication {
+  o String receiptId
+  o String drugId
+  o String drug_name
+  o String drug_desc
+}
+event InitialApplicationEvent {
+  o DrugReceipt drugReceipt
+}
+transaction Close {
+  --> DrugReceipt drugReceipt
+  o String closeReason
+}
+
+event CloseEvent {
+  --> DrugReceipt drugReceipt
+  o String closeReason
+}

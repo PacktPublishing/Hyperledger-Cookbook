@@ -1,0 +1,4 @@
+[console_scripts]
+mkt = sawtooth_mkt.mkt_cli:main_wrapper
+mkt-tp-python = sawtooth_mkt.processor.main:main
+

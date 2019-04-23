@@ -1,0 +1,8 @@
+jobs:
+
+- name: deposit
+  call:
+      destination: 5486CD7F1453396A1C9E4B24CC07AA507C4CD88A
+      function: deposit
+      data:
+        - 1000

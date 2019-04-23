@@ -1,0 +1,232 @@
+{
+  "$class": "org.packt.farmatrace.Manufacturer",
+  "manufacturerId": "m001",
+  "entityInfo": {
+    "$class": "org.packt.farmatrace.Entity",
+    "name": "Lonestar Corp",
+    "desc": "Lonestar Corp is an international specialist healthcare company that is developing and commercialising products targeting critical care, cancer and other disorders.",
+    "phone": "18089000000",
+    "address": {
+      "$class": "org.packt.farmatrace.Address",
+      "street": "69 Proctor Ave",
+      "city": "Jamaica Plain",
+      "country": "US"
+    }
+  }
+} 
+{
+  "$class": "org.packt.farmatrace.Customer",
+  "customerId": "c001",
+  "personInfo": {
+    "$class": "org.packt.farmatrace.Person",
+    "firstName": "Brian",
+    "lastName": "Wu",
+    "phone": "18000000000",
+    "address": {
+      "$class": "org.packt.farmatrace.Address",
+      "street": "100 west street",
+      "city": "NYC",
+      "country": "US"
+    }
+  }
+}
+
+{
+  "$class": "org.packt.farmatrace.Distribution",
+  "distributionId": "d001",
+  "entityInfo": {
+    "$class": "org.packt.farmatrace.Entity",
+    "name": "Express Delivery Corp",
+    "desc": "global fast delivery business",
+    "phone": "18001110000",
+    "address": {
+      "$class": "org.packt.farmatrace.Address",
+      "street": "33 Jeffson St",
+      "city": "LA",
+      "country": "US"
+    }
+  }
+}
+
+{
+  "$class": "org.packt.farmatrace.Hospital",
+  "hospitalId": "h001",
+  "entityInfo": {
+    "$class": "org.packt.farmatrace.Entity",
+    "name": "Forest View Medical Center",
+    "desc": "Forest View Medical Center is a 200-bed non-profit major teaching hospital located in NYC, NY",
+    "phone": "",
+    "address": {
+      "$class": "org.packt.farmatrace.Address",
+      "street": "20 washington Dr",
+      "city": "NYC",
+      "country": "US"
+    }
+  }
+}
+{
+  "$class": "org.packt.farmatrace.Pharmacy",
+  "pharmacyId": "p001",
+  "entityInfo": {
+    "$class": "org.packt.farmatrace.Entity",
+    "name": "Randle Medical Supply",
+    "desc": "Randle Medical Supply is a America independent pharmacy and drugstore retailer with over 160 stores across US. Pharmasave produces a line of over 600 Pharmasave Brand products.",
+    "phone": "12909990200",
+    "address": {
+      "$class": "org.packt.farmatrace.Address",
+      "street": "8234 Overlook Court",
+      "city": "Ellenwood",
+      "country": "US"
+    }
+  }
+}
+{
+  "$class": "org.packt.farmatrace.Physician",
+  "physicianId": "ps001",
+  "personInfo": {
+    "$class": "org.packt.farmatrace.Person",
+    "firstName": "John",
+    "lastName": "Anderson",
+    "phone": "16230002099",
+    "address": {
+      "$class": "org.packt.farmatrace.Address",
+      "street": "9908 E. Tallwood St",
+      "city": "Lorton",
+      "country": "US"
+    }
+  }
+}
+//init
+{
+  "$class": "org.packt.farmatrace.InitialApplication",
+  "receiptId": "farmatrace-001",
+  "drugId": "0777-3105-02",
+  "drug_name": "Doxycycline monohydrate",
+  "drug_desc": "A synthetic tetracycline derivative with similar antimicrobial activity."
+}
+
+{
+  "$class": "org.packt.farmatrace.makeDrug",
+  "fromId": "m001",
+  "toId": "m001",
+  "drugReceipt": {
+    "$class": "org.packt.farmatrace.DrugReceipt",
+    "receiptId": "farmatrace-001",
+    "currentStatus": "START",
+    "evidents": [],
+    "drug": "resource:org.packt.farmatrace.Drug#0777-3105-02"
+  }
+}
+{
+  "$class": "org.packt.farmatrace.sendToDistribute",
+  "drugReceipt": {
+    "$class": "org.packt.farmatrace.DrugReceipt",
+    "receiptId": "farmatrace-001",
+    "currentStatus": "CREATE_DRUG",
+    "evidents": [
+        "resource:org.packt.farmatrace.Evident#7mn5o261iie"
+    ],
+    "drug": "resource:org.packt.farmatrace.Drug#0777-3105-02"
+  },
+  "fromId": "m001",
+  "toId": "d001"
+}
+{
+  "$class": "org.packt.farmatrace.distributeToPharmacy",
+  "drugReceipt": {
+    "$class": "org.packt.farmatrace.DrugReceipt",
+    "receiptId": "farmatrace-001",
+    "currentStatus": "PICK_UP_DRUG",
+    "evidents": [
+  "resource:org.packt.farmatrace.Evident#nthzxihb3sf",
+    "resource:org.packt.farmatrace.Evident#2h5yp0mx5z"
+    ],
+    "drug": "resource:org.packt.farmatrace.Drug#0777-3105-02"
+  },
+  "fromId": "d001",
+  "toId": "p001"
+}
+{
+  "$class": "org.packt.farmatrace.distributeToHospital",
+  "drugReceipt": {
+    "$class": "org.packt.farmatrace.DrugReceipt",
+    "receiptId": "farmatrace-001",
+    "currentStatus": "PICK_UP_DRUG",
+    "evidents": [
+  "resource:org.packt.farmatrace.Evident#nthzxihb3sf",
+    "resource:org.packt.farmatrace.Evident#2h5yp0mx5z"
+    ],
+    "drug": "resource:org.packt.farmatrace.Drug#0777-3105-02"
+  },
+  "fromId": "d001",
+  "toId": "h001"
+}
+{
+  "$class": "org.packt.farmatrace.distributeToPhysician",
+  "drugReceipt": {
+    "$class": "org.packt.farmatrace.DrugReceipt",
+    "receiptId": "farmatrace-001",
+    "currentStatus": "PICK_UP_DRUG",
+    "evidents": [
+"resource:org.packt.farmatrace.Evident#nthzxihb3sf",
+    "resource:org.packt.farmatrace.Evident#gxvuwamud5"
+    ],
+    "drug": "resource:org.packt.farmatrace.Drug#0777-3105-02"
+  },
+  "fromId": "d001",
+  "toId": "ps001"
+}
+
+{
+  "$class": "org.packt.farmatrace.buyFromPharmacy",
+  "drugReceipt": {
+    "$class": "org.packt.farmatrace.DrugReceipt",
+    "receiptId": "farmatrace-001",
+    "currentStatus": "DEVLIER_PHARMACY",
+    "evidents": [
+      "resource:org.packt.farmatrace.Evident#nthzxihb3sf",
+      "resource:org.packt.farmatrace.Evident#2h5yp0mx5z",
+      "resource:org.packt.farmatrace.Evident#9tb8p8ssgiu"
+    ],
+    "drug": "resource:org.packt.farmatrace.Drug#0777-3105-02"
+  },
+  "fromId": "p001",
+  "toId": "c001"
+}
+{
+  "$class": "org.packt.farmatrace.buyFromHospital",
+  "drugReceipt": {
+    "$class": "org.packt.farmatrace.DrugReceipt",
+    "receiptId": "farmatrace-001",
+    "currentStatus": "DEVLIER_HOSPITAL",
+    "evidents": [
+      "resource:org.packt.farmatrace.Evident#nthzxihb3sf",
+      "resource:org.packt.farmatrace.Evident#2h5yp0mx5z",
+      "resource:org.packt.farmatrace.Evident#9tb8p8ssgiu"
+    ],
+    "drug": "resource:org.packt.farmatrace.Drug#0777-3105-02"
+  },
+  "fromId": "h001",
+  "toId": "c001"
+}
+{
+  "$class": "org.packt.farmatrace.buyFromPhysician",
+  "drugReceipt": {
+    "$class": "org.packt.farmatrace.DrugReceipt",
+    "receiptId": "farmatrace-001",
+    "currentStatus": "DEVLIER_PHYSICIAN",
+    "evidents": [
+    "resource:org.packt.farmatrace.Evident#nthzxihb3sf",
+    "resource:org.packt.farmatrace.Evident#gxvuwamud5",
+    "resource:org.packt.farmatrace.Evident#y07lpvpy8fh"
+    ],
+    "drug": "resource:org.packt.farmatrace.Drug#0777-3105-02"
+  },
+  "fromId": "ps001",
+  "toId": "c001"
+}
+{
+  "$class": "org.packt.farmatrace.Close",
+  "drugReceipt": "resource:org.packt.farmatrace.DrugReceipt#farmatrace-001",
+  "closeReason": "end of farma trace"
+}
