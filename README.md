@@ -73,11 +73,11 @@ With the following software and hardware list you can run all code files present
 |          | caliper                             |                                    |
 
 
-### Related products <Other books you may enjoy>
+### Related products
 * Hands-On Blockchain with Hyperledger [[Packt]](https://prod.packtpub.com/in/big-data-and-business-intelligence/hands-blockchain-hyperledger?utm_source=github&utm_medium=repository&utm_campaign=9781788994521) [[Amazon]](https://www.amazon.com/dp/1788994523)
 
 
-## Get to Know the Author(s)
+## Get to Know the Authors
 **Xun (Brian) Wu** is an author, software architect, and advisor with over 17 years' extensive hands-on experience in blockchain design and development, big data, AI, the cloud, UIs, and system infrastructures. He has worked for top investment banks including J.P. Morgan, Citigroup, and Bank of America. He is a coauthor of Blockchain Quick Start Guide, Blockchain By Example, and Seven NoSQL Databases in a Week, and has worked as a technical reviewer on over 50 technical computer books for Packt. He owns several blockchain patents, and currently serves as a board advisor for several blockchain start-up companies. Brian holds an NJIT computer science master's degree. He lives in New Jersey with his two beautiful daughters, Bridget and Charlotte.
 
 **Chuanfeng Zhang** is enthusiastic and passionate about technologies and trading and data analysis, with 20 years' experience in both the technology and finance sectors. He has worked at top investment banks and technology firms including Goldman Sachs, Credit Suisse, and IBM. He has led, designed, and successfully developed many enterprise-scale systems with diverse architectures for algorithmic trading, order management, risk management, business intelligence, and more.
@@ -86,7 +86,7 @@ With the following software and hardware list you can run all code files present
 
 
 
-## Other books by the authors
+## Other books by the author
 * [Blockchain Quick Start Guide](https://prod.packtpub.com/in/big-data-and-business-intelligence/blockchain-quick-start-guide?utm_source=github&utm_medium=repository&utm_campaign=9781789807974)
 
 
