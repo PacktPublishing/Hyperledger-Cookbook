@@ -9,7 +9,7 @@ This is the code repository for [Book Name](Packt UTM URL of the Book), publishe
 ## What is this book about?
 Hyperledger is an open-source project and creates private blockchain applications for a range of domains. This book will be your desk reference as you explore common and not-so-common challenges faced while building blockchain networks using Hyperledger services.
 
-This book covers the following exciting features: <First 5 What you'll learn points>
+This book covers the following exciting features: 
 * Create the most popular permissioned blockchain network with Fabric and Composer
 * Build permissioned and permission-less blockchains using Sawtooth
 * Utilize built-in Iroha asset/account management with role-based permissions
