@@ -77,7 +77,7 @@ With the following software and hardware list you can run all code files present
 
 ### Related products
 * Hands-On Blockchain with Hyperledger [[Packt]](https://prod.packtpub.com/in/big-data-and-business-intelligence/hands-blockchain-hyperledger?utm_source=github&utm_medium=repository&utm_campaign=9781788994521) [[Amazon]](https://www.amazon.com/dp/1788994523)
-
+* Blockchain By Example [[Packt]](https://prod.packtpub.com/in/big-data-and-business-intelligence/blockchain-example?utm_source=github&utm_medium=repository&utm_campaign=9781788475686) [[Amazon]](https://www.amazon.com/dp/1788475682)
 
 ## Get to Know the Authors
 **Xun (Brian) Wu** is an author, software architect, and advisor with over 17 years' extensive hands-on experience in blockchain design and development, big data, AI, the cloud, UIs, and system infrastructures. He has worked for top investment banks including J.P. Morgan, Citigroup, and Bank of America. He is a coauthor of Blockchain Quick Start Guide, Blockchain By Example, and Seven NoSQL Databases in a Week, and has worked as a technical reviewer on over 50 technical computer books for Packt. He owns several blockchain patents, and currently serves as a board advisor for several blockchain start-up companies. Brian holds an NJIT computer science master's degree. He lives in New Jersey with his two beautiful daughters, Bridget and Charlotte.
