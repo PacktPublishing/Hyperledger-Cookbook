@@ -1,8 +1,10 @@
 # Hyperledger Cookbook
 
-<a href="Packt UTM URL of the Book"><img src="Cover Image URL of the Book" alt="Book Name" height="256px" align="right"></a>
+<a href="https://prod.packtpub.com/in/big-data-and-business-intelligence/hyperledger-cookbook?utm_source=github&utm_medium=repository&utm_campaign=9781789534887"><img src="https://prod.packtpub.com/media/catalog/product/cache/e4d64343b1bc593f1c5348fe05efa4a6/b/1/b11699.png" alt="Hyperledger Cookbook
+" height="256px" align="right"></a>
 
-This is the code repository for [Book Name](Packt UTM URL of the Book), published by Packt.
+This is the code repository for [Hyperledger Cookbook
+](https://prod.packtpub.com/in/big-data-and-business-intelligence/hyperledger-cookbook?utm_source=github&utm_medium=repository&utm_campaign=9781789534887), published by Packt.
 
 **Over 40 recipes implementing the latest Hyperledger blockchain frameworks and tools**
 
@@ -16,7 +18,7 @@ This book covers the following exciting features:
 * Implement and run Ethereum smart contracts with Burrow 
 * Get to grips with security and scalability in Hyperledger
 
-If you feel this book is for you, get your [copy](https://www.amazon.com/dp/10DigitISBN) today!
+If you feel this book is for you, get your [copy](https://www.amazon.com/dp/1789534887) today!
 
 <a href="https://www.packtpub.com/?utm_source=github&utm_medium=banner&utm_campaign=GitHubBanner"><img src="https://raw.githubusercontent.com/PacktPublishing/GitHub/master/GitHub.png" 
 alt="https://www.packtpub.com/" border="5" /></a>
